@@ -23,8 +23,8 @@
      the card's max footprint (--ov-work-w for compact, --ov-open-w for Live),
      since the card is anchored flush to the screen edge in CSS. Keep overlay.rs
      in sync when these change. */
-  --ov-rest-w: 112px; /* resting compact pill (minimal, recording) */
-  --ov-pill-w: 120px; /* base width / Live pill before it opens or collapses */
+  --ov-rest-w: 88px; /* resting compact pill (minimal, recording) */
+  --ov-pill-w: 88px; /* base width / Live pill before it opens or collapses */
   --ov-work-w: 156px; /* working pill (transcribing / polishing) -- wide enough to
                          center longer labels; shared by Live (collapsed) + minimal */
   --ov-open-w: 340px; /* Live panel, expanded */
@@ -239,6 +239,13 @@
      sized. */
   grid-template-columns: minmax(18px, 1fr) auto minmax(18px, 1fr);
   align-items: center;
+}
+.sbase.listening {
+  grid-template-columns: 1fr auto;
+  padding: 0 6px 0 10px;
+}
+.sbase.listening .swave {
+  justify-self: center;
 }
 .sbase-l {
   display: flex;
