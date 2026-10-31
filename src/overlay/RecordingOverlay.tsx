@@ -241,44 +241,21 @@ const RecordingOverlay: React.FC = () => {
     </div>
   );
 
-  const cancelBtn = (
-    <button
-      className="sx"
-      aria-label="cancel"
-      onClick={() => commands.cancelOperation()}
-    >
-      <svg viewBox="0 0 16 16" aria-hidden="true">
-        <path
-          d="M4 4 L12 12 M12 4 L4 12"
-          stroke="currentColor"
-          strokeWidth="1.6"
-          strokeLinecap="round"
-        />
-      </svg>
-    </button>
-  );
-
-  // dot (left) | waveform (center) | timer + cancel (right) — same structure for
-  // pill & panel, so the Live morph is a pure width change.
-  const listeningRow = (showTimer: boolean, showCancel: boolean) => (
+  const listeningRow = (showTimer: boolean) => (
     <div className="sbase listening">
       {waveform}
-      <div className="sbase-r">
-        {showTimer && <span className="stimer">{fmtTime(elapsed)}</span>}
-        {showCancel && cancelBtn}
-      </div>
+      {showTimer && (
+        <div className="sbase-r">
+          <span className="stimer">{fmtTime(elapsed)}</span>
+        </div>
+      )}
     </div>
   );
 
-  // spinner (left) | label (center) | cancel (right) — same 3-zone grid as the
-  // listening row, so the label is centered.
-  const workingRow = (label: string, showCancel: boolean) => (
-    <div className="sbase">
-      <div className="sbase-l">
-        <span className="sspinner" />
-      </div>
+  const workingRow = (label: string) => (
+    <div className="sbase working">
+      <span className="sspinner" />
       <span className="swork-label">{label}</span>
-      <div className="sbase-r">{showCancel && cancelBtn}</div>
     </div>
   );
 
@@ -334,9 +311,8 @@ const RecordingOverlay: React.FC = () => {
                 workKind === "polishing"
                   ? t("overlay.processing")
                   : transcribingLabel,
-                true,
               )
-            : listeningRow(open, true)}
+            : listeningRow(open)}
         </div>
       </div>
     );
@@ -344,7 +320,7 @@ const RecordingOverlay: React.FC = () => {
 
   // ---- Minimal overlay: exactly one row at a time — waveform (recording), or a
   // spinner + label (transcribing / processing). Never both. The pill animates its
-  // width between them; the cancel button is in both rows so it stays put.
+  // width between them.
   const working = state === "transcribing" || state === "processing";
   const workLabel =
     state === "processing" ? t("overlay.processing") : transcribingLabel;
@@ -357,7 +333,7 @@ const RecordingOverlay: React.FC = () => {
       <div
         className={`scard compact ${working && isVisible ? "cworking" : ""}`}
       >
-        {working ? workingRow(workLabel, true) : listeningRow(false, true)}
+        {working ? workingRow(workLabel) : listeningRow(false)}
       </div>
     </div>
   );
