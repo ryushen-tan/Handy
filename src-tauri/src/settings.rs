@@ -1006,7 +1006,7 @@ pub fn get_default_settings() -> AppSettings {
         bindings,
         shortcut_activation: ShortcutActivation::default(),
         hold_threshold_ms: default_hold_threshold_ms(),
-        audio_feedback: false,
+        audio_feedback: true,
         audio_feedback_volume: default_audio_feedback_volume(),
         sound_theme: default_sound_theme(),
         start_hidden: default_start_hidden(),

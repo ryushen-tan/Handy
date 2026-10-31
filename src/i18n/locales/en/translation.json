@@ -964,8 +964,8 @@
     }
   },
   "overlay": {
-    "transcribing": "Transcribing...",
-    "processing": "Processing...",
+    "transcribing": "Loading...",
+    "processing": "Loading...",
     "loadingModel": "Loading model..."
   },
   "secureInput": {
