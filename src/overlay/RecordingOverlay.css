@@ -23,13 +23,12 @@
      the card's max footprint (--ov-work-w for compact, --ov-open-w for Live),
      since the card is anchored flush to the screen edge in CSS. Keep overlay.rs
      in sync when these change. */
-  --ov-rest-w: 172px; /* resting compact pill (minimal, recording) -- roomy enough
-                         for the English working label before the grow starts */
-  --ov-pill-w: 184px; /* base width / Live pill before it opens or collapses */
-  --ov-work-w: 216px; /* working pill (transcribing / polishing) -- wide enough to
+  --ov-rest-w: 112px; /* resting compact pill (minimal, recording) */
+  --ov-pill-w: 120px; /* base width / Live pill before it opens or collapses */
+  --ov-work-w: 156px; /* working pill (transcribing / polishing) -- wide enough to
                          center longer labels; shared by Live (collapsed) + minimal */
-  --ov-open-w: 392px; /* Live panel, expanded */
-  --ov-base-h: 40px; /* control-row height (.sbase) */
+  --ov-open-w: 340px; /* Live panel, expanded */
+  --ov-base-h: 28px; /* control-row height (.sbase) */
   --ov-cap-max-h: 64px; /* max height of the scrolling live-text region */
 }
 /* ============================================================
@@ -102,7 +101,7 @@
   /* Never wider than the window: an unaccounted content zoom degrades to a
      narrower card instead of clipping. 2px = our border (no border-box reset). */
   max-width: calc(100vw - 2px);
-  border-radius: 24px;
+  border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -138,11 +137,11 @@
 }
 .scard.open {
   width: var(--ov-open-w);
-  border-radius: 16px;
+  border-radius: 14px;
 }
 .scard.working {
   width: var(--ov-work-w);
-  border-radius: 18px;
+  border-radius: 16px;
 }
 
 /* Compact form: two fixed widths so the recording→working change is an animatable
@@ -183,11 +182,11 @@
   overscroll-behavior: contain;
   display: flex;
   flex-direction: column;
-  padding-top: 12px;
+  padding-top: 10px;
   padding-bottom: 0px;
-  padding-left: 14px;
-  padding-right: 14px;
-  font-size: 15px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 14px;
   font-style: italic;
   line-height: 1.35;
   letter-spacing: -0.003em;
@@ -233,29 +232,29 @@
 .sbase {
   height: var(--ov-base-h);
   flex: none; /* the control row never squashes; only the text region gives */
-  padding: 0 10px;
+  padding: 0 8px;
   display: grid;
   /* Equal side columns (min 22px to hold the cancel button) keep the center item
      — waveform or label — centered whether the pill is at min width or content-
      sized. */
-  grid-template-columns: minmax(22px, 1fr) auto minmax(22px, 1fr);
+  grid-template-columns: minmax(18px, 1fr) auto minmax(18px, 1fr);
   align-items: center;
 }
 .sbase-l {
   display: flex;
-  padding-left: 5px;
+  padding-left: 3px;
   align-items: center;
   justify-self: start;
 }
 .sbase-r {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
   justify-self: end;
 }
 .sdot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   flex: none;
   box-sizing: border-box;
@@ -279,11 +278,11 @@
     box-shadow: 0 0 0 0 var(--s-accent-soft);
   }
   70% {
-    box-shadow: 0 0 0 7px transparent;
+    box-shadow: 0 0 0 5px transparent;
   }
 }
 .stimer {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--s-faint);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -300,15 +299,15 @@
 .swave {
   display: flex;
   align-items: center;
-  gap: 3px;
-  padding-right: 8px;
-  height: 18px;
+  gap: 2px;
+  padding-right: 6px;
+  height: 14px;
   flex: none;
 }
 .swave i {
-  width: 4px;
-  min-height: 3px;
-  max-height: 18px;
+  width: 3px;
+  min-height: 2px;
+  max-height: 14px;
   border-radius: 2px;
   background: var(--s-accent);
   transition:
@@ -317,7 +316,7 @@
     opacity 180ms ease;
 }
 .swave.arming i {
-  height: 6px !important;
+  height: 5px !important;
   background: var(--s-muted);
   opacity: 0.35;
   animation: swave-arming 900ms ease-in-out infinite;
@@ -349,8 +348,8 @@
   }
 }
 .sx {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   flex: none;
   padding: 0;
@@ -369,8 +368,8 @@
     transform 100ms ease;
 }
 .sx svg {
-  width: 9px;
-  height: 9px;
+  width: 7px;
+  height: 7px;
   display: block;
 }
 .sx:hover {
@@ -384,8 +383,8 @@
 
 /* working state (transcribing / polishing) — spinner + label */
 .sspinner {
-  width: 13px;
-  height: 13px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   border: 2px solid var(--s-hair);
   border-top-color: var(--s-accent);
@@ -398,10 +397,10 @@
   }
 }
 .swork-label {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--s-muted);
   white-space: nowrap;
-  padding: 0 8px; /* breathing room from the spinner / cancel when content-sized */
+  padding: 0 6px; /* breathing room from the spinner / cancel when content-sized */
   /* Safety net: ellipsize rather than clip if a label exceeds the max pill width. */
   min-width: 0;
   overflow: hidden;
