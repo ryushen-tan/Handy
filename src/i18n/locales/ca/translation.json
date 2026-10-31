@@ -584,6 +584,14 @@
         "remove": "Suprimiu {{word}}",
         "duplicate": "«{{word}}» ja existeix"
       },
+      "punctuationAndCapitalization": {
+        "label": "Punctuation & Capitalization",
+        "description": "Let the model add punctuation and capital letters. Turn off for raw lowercase text. Only applies to models that support it."
+      },
+      "inverseTextNormalization": {
+        "label": "Numbers & Dates as Digits",
+        "description": "Write spoken numbers, dates and units as digits, such as \"twenty five\" as 25. Turn off to keep them as words. Only applies to models that support it."
+      },
       "voiceActivityDetection": {
         "title": "Detecció d'activitat de veu",
         "description": "Filtra els silencis dels enregistraments. Els models compatibles amb la transcripció en temps real utilitzen un marge final de detecció de veu més llarg; si desactiveu la detecció, s'enregistra l'àudio sense filtrar."

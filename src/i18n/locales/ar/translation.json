@@ -584,6 +584,14 @@
         "remove": "إزالة {{word}}",
         "duplicate": "\"{{word}}\" موجود بالفعل"
       },
+      "punctuationAndCapitalization": {
+        "label": "Punctuation & Capitalization",
+        "description": "Let the model add punctuation and capital letters. Turn off for raw lowercase text. Only applies to models that support it."
+      },
+      "inverseTextNormalization": {
+        "label": "Numbers & Dates as Digits",
+        "description": "Write spoken numbers, dates and units as digits, such as \"twenty five\" as 25. Turn off to keep them as words. Only applies to models that support it."
+      },
       "voiceActivityDetection": {
         "title": "كشف النشاط الصوتي",
         "description": "تصفية الصمت من التسجيلات. النماذج التي تدعم البث تستخدم فترة VAD أطول؛ وتعطيل VAD يسجّل الصوت الخام."

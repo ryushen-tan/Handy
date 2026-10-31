@@ -584,6 +584,14 @@
         "remove": "Ta bort {{word}}",
         "duplicate": "\"{{word}}\" finns redan"
       },
+      "punctuationAndCapitalization": {
+        "label": "Punctuation & Capitalization",
+        "description": "Let the model add punctuation and capital letters. Turn off for raw lowercase text. Only applies to models that support it."
+      },
+      "inverseTextNormalization": {
+        "label": "Numbers & Dates as Digits",
+        "description": "Write spoken numbers, dates and units as digits, such as \"twenty five\" as 25. Turn off to keep them as words. Only applies to models that support it."
+      },
       "voiceActivityDetection": {
         "title": "Röstaktivitetsdetektering",
         "description": "Filtrerar bort tystnad från inspelningar. Modeller med streamingstöd använder en längre VAD-svans; om VAD inaktiveras spelas rått ljud in."

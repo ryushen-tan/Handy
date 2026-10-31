@@ -584,6 +584,14 @@
         "remove": "{{word}} Kaldır",
         "duplicate": "\"{{word}}\" zaten mevcut"
       },
+      "punctuationAndCapitalization": {
+        "label": "Punctuation & Capitalization",
+        "description": "Let the model add punctuation and capital letters. Turn off for raw lowercase text. Only applies to models that support it."
+      },
+      "inverseTextNormalization": {
+        "label": "Numbers & Dates as Digits",
+        "description": "Write spoken numbers, dates and units as digits, such as \"twenty five\" as 25. Turn off to keep them as words. Only applies to models that support it."
+      },
       "voiceActivityDetection": {
         "title": "Ses Etkinliği Algılama",
         "description": "Kayıtlardaki sessizliği filtreler. Akış destekli modeller daha uzun bir VAD kuyruğu kullanır; VAD devre dışı bırakıldığında ham ses kaydedilir."

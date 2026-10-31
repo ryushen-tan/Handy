@@ -584,6 +584,14 @@
         "remove": "Xóa {{word}}",
         "duplicate": "\"{{word}}\" đã tồn tại"
       },
+      "punctuationAndCapitalization": {
+        "label": "Punctuation & Capitalization",
+        "description": "Let the model add punctuation and capital letters. Turn off for raw lowercase text. Only applies to models that support it."
+      },
+      "inverseTextNormalization": {
+        "label": "Numbers & Dates as Digits",
+        "description": "Write spoken numbers, dates and units as digits, such as \"twenty five\" as 25. Turn off to keep them as words. Only applies to models that support it."
+      },
       "voiceActivityDetection": {
         "title": "Phát hiện hoạt động giọng nói",
         "description": "Lọc bỏ khoảng lặng khỏi bản ghi. Các mô hình hỗ trợ truyền trực tiếp dùng đuôi VAD dài hơn; tắt VAD sẽ ghi âm thanh thô."

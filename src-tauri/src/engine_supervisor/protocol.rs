@@ -157,6 +157,8 @@ pub struct LoadedInfo {
     /// run (whisper today); other models' long audio is chunked by Handy.
     pub supports_long_form: bool,
     pub supports_vocabulary: bool,
+    pub supports_pnc: bool,
+    pub supports_itn: bool,
 }
 
 /// Encode one frame. Refuses a section the reader would refuse, so an

@@ -31,7 +31,7 @@ use std::thread;
 use std::time::{Duration, Instant, SystemTime};
 use tauri::{AppHandle, Emitter, Manager};
 use tauri_specta::Event;
-use transcribe_cpp::{Backend, RunOptions, Task, Transcript};
+use transcribe_cpp::{Backend, Itn, Pnc, RunOptions, Task, Transcript};
 
 mod chunked;
 mod job;
@@ -1318,6 +1318,16 @@ fn run_setup(info: &LoadedInfo, settings: &AppSettings, language: LanguageDecisi
         language: run_plan.language,
         target_language: run_plan.target_language,
         vocabulary: vocabulary_for_model(info.supports_vocabulary, &settings.custom_words),
+        pnc: if info.supports_pnc && !settings.punctuation_and_capitalization {
+            Pnc::Off
+        } else {
+            Pnc::Default
+        },
+        itn: if info.supports_itn && !settings.inverse_text_normalization {
+            Itn::Off
+        } else {
+            Itn::Default
+        },
         ..Default::default()
     };
 

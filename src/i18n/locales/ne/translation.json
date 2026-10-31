@@ -584,6 +584,14 @@
         "remove": "{{word}} हटाउनुहोस्",
         "duplicate": "\"{{word}}\" पहिले नै छ"
       },
+      "punctuationAndCapitalization": {
+        "label": "Punctuation & Capitalization",
+        "description": "Let the model add punctuation and capital letters. Turn off for raw lowercase text. Only applies to models that support it."
+      },
+      "inverseTextNormalization": {
+        "label": "Numbers & Dates as Digits",
+        "description": "Write spoken numbers, dates and units as digits, such as \"twenty five\" as 25. Turn off to keep them as words. Only applies to models that support it."
+      },
       "voiceActivityDetection": {
         "title": "भ्वाइस एक्टिभिटी डिटेक्सन",
         "description": "रेकर्डिङबाट मौनता हटाउँछ। स्ट्रिमिङ-सक्षम मोडेलहरूले लामो VAD टेल प्रयोग गर्छन्; VAD अफ गर्दा कच्चा अडियो रेकर्ड हुन्छ।"
