@@ -283,6 +283,7 @@ impl ModelUnloadTimeout {
 pub enum SoundTheme {
     Marimba,
     Pop,
+    Click,
     Custom,
 }
 
@@ -291,6 +292,7 @@ impl SoundTheme {
         match self {
             SoundTheme::Marimba => "marimba",
             SoundTheme::Pop => "pop",
+            SoundTheme::Click => "click",
             SoundTheme::Custom => "custom",
         }
     }
@@ -694,7 +696,7 @@ fn default_audio_feedback_volume() -> f32 {
 }
 
 fn default_sound_theme() -> SoundTheme {
-    SoundTheme::Marimba
+    SoundTheme::Click
 }
 
 fn default_theme() -> Theme {
