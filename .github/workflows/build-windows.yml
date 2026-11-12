@@ -1,0 +1,20 @@
+name: "Build Windows"
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - aura-windows-build
+
+jobs:
+  build-windows:
+    permissions:
+      contents: write
+    uses: ./.github/workflows/build.yml
+    with:
+      platform: "windows-latest"
+      target: "x86_64-pc-windows-msvc"
+      sign-binaries: false
+      asset-prefix: "aura-windows"
+      upload-artifacts: true
+    secrets: inherit
